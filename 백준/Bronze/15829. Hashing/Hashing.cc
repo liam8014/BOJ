@@ -1,19 +1,19 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-#define M 1234567891
-#define LL long long 
+#define M 1234567891LL
+#define ULL unsigned long long 
 using namespace std;
 int main() {
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     int l;
-    LL ans=0;
+    ULL ans=0, p=1;
     string str;
     cin >> l >> str;
     for (int i = 0; i < l; i++) {
-        ans += (str[i]-96) * pow(31,i);
-        ans% M;
+        ans += ((str[i] - 'a' + 1) * p) % M;
+        p = (p * 31) % M;
     }
-    cout << ans;
+    cout << ans % M;
     return 0;
 }
