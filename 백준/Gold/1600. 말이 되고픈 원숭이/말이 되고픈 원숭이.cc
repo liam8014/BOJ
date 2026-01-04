@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include <queue>
 #define IOS ios::sync_with_stdio(0), cin.tie(0), cout.tie(0)
 #define pii pair<int,int>
@@ -10,12 +9,12 @@ pii hDir[8] = { {2, 1},{-2, 1},{2, -1},{-2, -1},
 struct nd{
     int r, c, w, k;
 };
+bool v[200][200];
+int vst[200][200] = { 0 };
 int main() {
     IOS;
     int K,N,M, ans=-1;
     cin >> K >> M >> N;
-    vector<vector<bool>> v(N,vector<bool>(M));
-    vector<vector<int>> vst(N, vector<int>(M, 0));
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < M; j++) {
             int num;
@@ -53,3 +52,4 @@ int main() {
     cout << ans;
     return 0;
 }
+
