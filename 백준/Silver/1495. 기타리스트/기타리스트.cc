@@ -7,7 +7,7 @@ using namespace std;
 int N, S, M;
 int main() {
     cin >> N >> S >> M;
-    vector<set<int>> dp(N+1);
+    set<int> dp[51];
     dp[0].insert(S);
     for (int i = 1; i <= N; i++) {
         int volAmt; cin >> volAmt;
